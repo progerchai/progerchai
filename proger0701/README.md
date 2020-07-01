@@ -6,7 +6,9 @@
 
 运行方式 ，pull代码到本地执行 `npm start`
 
+效果图：
 
+![image-20200701233840220](/Users/aiyouwei/Library/Application Support/typora-user-images/image-20200701233840220.png)
 
 计算过程：每月300公积金为例
 
