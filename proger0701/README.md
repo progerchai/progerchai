@@ -1,68 +1,48 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> 公积金计算demo
+>
+> 暂时复杂格式校验，使用React Hooks  实现
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `yarn start`
+计算过程：每月300公积金为例
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- 一年后，公积金账户余额为
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+  300 * 12 *2  = 7200 （公司和个人对半缴纳）
 
-### `yarn test`
+- 公积金月平均余额 为：
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  (600 + 1200 + 1800 +...+ 7200)/12 = 46800/12 = 3900
 
-### `yarn build`
+- 公积金贷款额度为：
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  3900*15 = 58500
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- 两年后，公积金账户余额为
 
-### `yarn eject`
+  300 * 12 *2 *2 = 14400 （公司和个人对半缴纳）
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- 公积金月平均余额 为：
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  (7800 +...+ 14400)/12 = 133200/12 = 11100
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- 公积金贷款额度为：
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+  10800*15 = 162000
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- 三年后，公积金账户余额为
 
-### Code Splitting
+  300 * 12 *2 *3 = 21600 （公司和个人对半缴纳）
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+- 公积金月平均余额 为：
 
-### Analyzing the Bundle Size
+  (15000 +...+ 21600)/12 = 219600/12 = 18300
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+- 公积金贷款额度为：
 
-### Making a Progressive Web App
+  18000*15 = 27000
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
