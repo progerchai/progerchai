@@ -9,7 +9,7 @@
 
 效果图：
 
-![image-20200701233840220](/Users/aiyouwei/Library/Application Support/typora-user-images/image-20200701233840220.png)
+![image-20200701233840220](https://www.proger.cn/proger2020/files/images/proger0701.jpg)
 
 计算过程：每月 300 公积金为例
 
