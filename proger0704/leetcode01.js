@@ -18,6 +18,25 @@ var twoSum = function (nums, target) {
   return [];
 };
 
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+// javascript 方法2：运行时间--72 ms	内存消耗--34.1 MB
+var twoSum = function (nums, target) {
+  let map = {};
+  for (let i = 0; i < nums.length; i++) {
+    if (!map[target - nums[i]]) {
+      //防止 map[target - nums[i]] === 0 的情况，所以下标+1
+      map[nums[i]] = i + 1;
+    } else {
+      return [map[target - nums[i]] - 1, i];
+    }
+  }
+  return [];
+};
+
 //python方法1:运行时间--64 ms	内存消耗--15.2 MB
 // class Solution:
 //     def twoSum(self, nums: List[int], target: int) -> List[int]:
