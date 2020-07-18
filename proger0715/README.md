@@ -4,3 +4,10 @@
 
 1. demo小样，测试mac环境调用摄像头
 
+演示地址：https://www.proger.cn/proger2020/proger0715/build/ 
+
+---
+仅限web端打开
+效果图：
+
+![效果图](https://www.proger.cn/proger2020/files/images/proger0715.jpeg)
