@@ -1,0 +1,23 @@
+.focusPoint {
+  transform: translateY(-10px);
+  position: relative;
+  font-size: 16px;
+  user-select: none;
+  i {
+    // display: none;
+    color: transparent !important;
+  }
+}
+.focusPoint::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 0, 0, 0.5);
+  transform-origin: center;
+  transform: scale(1) translateX(-20px);
+  animation: pointBreath 2s infinite;
+  top: 20px;
+  left: 38%;
+}
