@@ -26,7 +26,7 @@ function App() {
           anchor="bottom"
           lnglat={[120.190683, 30.260876]}
         >
-          <div className={styles.focusPoint}>123</div>
+          <div className={`test ${styles.focusPoint}`}>123</div>
         </Marker>
       </AMapScene>
     </>
