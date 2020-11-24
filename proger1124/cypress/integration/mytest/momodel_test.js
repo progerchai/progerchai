@@ -1,5 +1,15 @@
 describe('EDU版本自动化脚本',function(){
-    cy.on('uncaught:exception', (err, runnable) => {
+    //   cy.on('fail', (error, runnable) => {
+    //     console.log(888888,err)
+    //     debugger
+      
+    //     // we now have access to the err instance
+    //     // and the mocha runnable this failed on
+      
+    //     throw error // throw error to have test still fail
+    //   })
+    it('新建Notebook',function(){
+       cy.on('uncaught:exception', (err, runnable) => {
         expect(err.message).to.include('something about the error')
         console.log(77777777,err)
         // using mocha's async done callback to finish
@@ -11,16 +21,6 @@ describe('EDU版本自动化脚本',function(){
         // failing this test
         return false
       })
-    //   cy.on('fail', (error, runnable) => {
-    //     console.log(888888,err)
-    //     debugger
-      
-    //     // we now have access to the err instance
-    //     // and the mocha runnable this failed on
-      
-    //     throw error // throw error to have test still fail
-    //   })
-    it('新建Notebook',function(){
         cy.visit('http://192.168.30.36:8899')
         cy.get('#Header-login').click()
         cy.get('#username').type('teacher003')
