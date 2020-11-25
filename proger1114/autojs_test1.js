@@ -1,2 +1,9 @@
-app.launch("淘宝");
-sleep(1000)
+
+// auto()
+auto.waitFor()
+toastLog(currentPackage())
+toastLog('程序开始运行')
+launchApp("支付宝");
+
+
+toastLog('程序结束运行 !')

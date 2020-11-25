@@ -16,3 +16,5 @@
 - proger0809 `leetcode93 复原 IP 地址`
 - proger0905 `app-demo 选择困难症-晚饭吃什么`
 - proger1014 `leetcode628 三个数的最大乘积`
+- proger1124 `cypress`
+- proger1125 `node send email`
