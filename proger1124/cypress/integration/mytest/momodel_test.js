@@ -23,8 +23,9 @@ describe('EDU版本自动化脚本',function(){
       })
         cy.visit('http://192.168.30.36:8899')
         cy.get('#Header-login').click()
-        cy.get('#username').type('teacher003')
-        cy.get('#password').type('123456')
+        cy.get('#username').type('teacher003').then(res =>{console.log(555,res)})
+        cy.get('#passwo').type('123456').then(res => {console.log(12345,res)})
+        console.log(4442314,'test')
         cy.get('[type=submit]').click()
         cy.get('#headerWrap > div > nav > div > ul:nth-child(1) > li:nth-child(2) > a')
         .click()
@@ -48,7 +49,12 @@ describe('EDU版本自动化脚本',function(){
         cy.get('#jp-main-dock-panel > div > div.p-Widget.jp-Notebook.jp-mod-scrollPastEnd.jp-NotebookPanel-notebook.jp-mod-editMode > div.p-Widget.jp-Cell.slideCell.jp-CodeCell.jp-mod-noOutputs.jp-Notebook-cell.jp-mod-active.jp-mod-selected.jp-mod-collapsed > div.p-Widget.p-Panel.jp-Cell-inputWrapper > div.p-Widget.jp-InputArea.jp-Cell-inputArea > div.p-Widget.p-Panel.code-bar-parent > div.p-Widget.jp-CodeMirrorEditor.jp-Editor.jp-InputArea-editor > div > div > textarea')
         .type('print("hello world")')
         
-
+        // const {formEmail} = require('cypress-failed-email')
+        // const filename = process.argv[2]
+        // //> failed-test.json for example
+        // const failed = require(filename)
+        // const email = formEmail(failed)
+        //> email is object with text fields {subject, plainText}
     })
     // .catch(err=>{cy.console.log(12345555,err)})
 })

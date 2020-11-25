@@ -8,6 +8,7 @@ cypress.run({
 .then((results) => {
     // 打印结果
     console.log('打印结果:::::',results)
+    console.log('-----------------------reporter-------------------------------',results.config.resolved.browsers)
     // throw new Error('new error')
 })
 .catch((err) => {
