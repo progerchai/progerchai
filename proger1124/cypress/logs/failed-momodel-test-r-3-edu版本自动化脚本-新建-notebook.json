@@ -1,0 +1,22 @@
+{
+  "specName": "momodel_test.js",
+  "title": "新建Notebook",
+  "suiteName": "EDU版本自动化脚本",
+  "testId": "r3",
+  "testName": "EDU版本自动化脚本 新建Notebook",
+  "testError": "Timed out retrying: Expected to find element: `#passwor`, but never found it.",
+  "testCommands": [
+    "visit http://192.168.30.36:8899",
+    "xhr  GET http://192.168.30.36:8899/socketio/socket.io/?EIO=3&transport=polling&t=NO38gjS",
+    "xhr  POST http://192.168.30.36:8899/socketio/socket.io/?EIO=3&transport=polling&t=NO38gks&sid=ccbdf8ded392480fb3028112f5b01ee9",
+    "xhr  GET http://192.168.30.36:8899/socketio/socket.io/?EIO=3&transport=polling&t=NO38glA&sid=ccbdf8ded392480fb3028112f5b01ee9",
+    "xhr  GET http://192.168.30.36:8899/socketio/socket.io/?EIO=3&transport=polling&t=NO38gln&sid=ccbdf8ded392480fb3028112f5b01ee9",
+    "xhr  GET http://192.168.30.36:8899/socketio/socket.io/?EIO=3&transport=polling&t=NO38gmg&sid=ccbdf8ded392480fb3028112f5b01ee9",
+    "get #Header-login",
+    "click ",
+    "new url http://192.168.30.36:8899/user/login?from=%2F",
+    "get #username",
+    "type teacher003",
+    "get #passwor"
+  ]
+}

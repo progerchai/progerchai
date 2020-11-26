@@ -9,23 +9,22 @@ describe('EDU版本自动化脚本',function(){
     //     throw error // throw error to have test still fail
     //   })
     it('新建Notebook',function(){
-       cy.on('uncaught:exception', (err, runnable) => {
-        expect(err.message).to.include('something about the error')
-        console.log(77777777,err)
-        // using mocha's async done callback to finish
-        // this test so we prove that an uncaught exception
-        // was thrown
-        done()
+      //  cy.on('uncaught:exception', (err, runnable) => {
+      //   expect(err.message).to.include('something about the error')
+      //   console.log(77777777,err)
+      //   // using mocha's async done callback to finish
+      //   // this test so we prove that an uncaught exception
+      //   // was thrown
+      //   done()
     
-        // return false to prevent the error from
-        // failing this test
-        return false
-      })
+      //   // return false to prevent the error from
+      //   // failing this test
+      //   return false
+      // })
         cy.visit('http://192.168.30.36:8899')
         cy.get('#Header-login').click()
-        cy.get('#username').type('teacher003').then(res =>{console.log(555,res)})
-        cy.get('#passwo').type('123456').then(res => {console.log(12345,res)})
-        console.log(4442314,'test')
+        cy.get('#username').type('teacher003')
+        cy.get('#passwor').type('123456')
         cy.get('[type=submit]').click()
         cy.get('#headerWrap > div > nav > div > ul:nth-child(1) > li:nth-child(2) > a')
         .click()
