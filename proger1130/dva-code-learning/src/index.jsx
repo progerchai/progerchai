@@ -1,5 +1,5 @@
 import React from "react";
-import dva, { connect } from "dva";
+import dva, { connect } from "./dva";
 import { createBrowserHistory } from "history";
 
 let app = dva({
@@ -19,6 +19,10 @@ app.model({
     add(state) {
       return { number: state.number + 2 };
     },
+    ["counter/add"](state) {
+      // ["counter/add"] 这样写的原因是,getReducer还没有对 type 做处理
+      return { number: state.number + 1 };
+    },
   },
   subscriptions: {},
 });
@@ -27,7 +31,7 @@ function Counter(props) {
   return (
     <div>
       <div> {props.number} </div>
-      <button onClick={() => props.dispatch({ type: "counter/add" })}>+</button>
+      <button onClick={() => props.dispatch({ type: "add" })}>+</button>
     </div>
   );
 }
