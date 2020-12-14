@@ -35,9 +35,9 @@ app.model({
     },
   },
   subscriptions: {
-    keyEvent({ dispatch }) {
+    keyEvent({ history, dispatch }) {
       window.onresize = function () {
-        dispatch({ type: "counter/add" });
+        dispatch({ type: "add" });
       };
     },
   },

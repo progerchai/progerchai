@@ -41,6 +41,16 @@ export default function (opts = {}) {
       }
     }
     sagaMiddleware.run(rootSaga);
+    // subscriptions
+    for (const model of app._models) {
+      if (model.subscriptions) {
+        for (const key in model.subscriptions) {
+          //遍历跑一遍subscriptions
+          let sub = model.subscriptions[key];
+          sub({ history, dispatch: app._store.dispatch });
+        }
+      }
+    }
     ReactDOM.render(
       <Provider store={app._store}>{app._router({ history })}</Provider>,
       document.querySelector(container)
@@ -85,5 +95,8 @@ function prefixNamespace(m) {
     memo[newKey] = reducers[key];
     return memo;
   }, {});
+
+  // 同样可以对effect做prefix操作
+
   return m;
 }
