@@ -1,8 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { createBrowserHistory } from "history";
-import { combineReducers, createStore } from "redux";
+import { applyMiddleware, combineReducers, createStore } from "redux";
 import { Provider, connect } from "react-redux";
+import createSagaMiddleware from "redux-saga";
+import * as sagaEffects from "redux-saga/effects";
+
 export { connect };
 export default function (opts = {}) {
   let history = opts.history || createBrowserHistory();
@@ -22,9 +25,24 @@ export default function (opts = {}) {
   }
   function start(container) {
     let reducers = getReducers(app);
-    app._store = createStore(reducers);
+    let sagaMiddleware = createSagaMiddleware(); // 新建middleware
+    app._store = createStore(reducers, applyMiddleware(sagaMiddleware)); //插入middleware
+    function* rootSaga() {
+      const { takeEvery } = sagaEffects;
+      for (const model of app._models) {
+        const effects = model.effects;
+        for (const key in effects) {
+          //遍历effects
+          yield takeEvery(`${model.namespace}/${key}`, function* (action) {
+            console.log("执行了saga");
+            yield effects[key](action, sagaEffects);
+          });
+        }
+      }
+    }
+    sagaMiddleware.run(rootSaga);
     ReactDOM.render(
-      <Provider store={app._store}>{app._router()}</Provider>,
+      <Provider store={app._store}>{app._router({ history })}</Provider>,
       document.querySelector(container)
     );
   }

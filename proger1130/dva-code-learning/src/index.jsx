@@ -1,7 +1,8 @@
 import React from "react";
-import dva, { connect } from "dva";
+import dva, { connect } from "./dva";
 import { createBrowserHistory } from "history";
-
+import { Router, Route, Link } from "./dva/router";
+import key from "keymaster";
 let app = dva({
   history: createBrowserHistory(),
 });
@@ -33,7 +34,13 @@ app.model({
       yield put({ type: "add" });
     },
   },
-  subscriptions: {},
+  subscriptions: {
+    keyEvent({ dispatch }) {
+      window.onresize = function () {
+        dispatch({ type: "counter/add" });
+      };
+    },
+  },
 });
 
 function Counter(props) {
@@ -52,8 +59,22 @@ function Counter(props) {
 }
 
 let ConnectCounter = connect((state) => state.counter)(Counter);
+function Home() {
+  return <div>home</div>;
+}
 
-app.router(() => <ConnectCounter />);
+// app.router(() => <ConnectCounter />);
+app.router(({ history }) => (
+  <Router history={history}>
+    <>
+      <Link to="/">home</Link>
+      <br />
+      <Link to="/counter">counter</Link>
+      <Route path="/" component={Home}></Route>
+      <Route path="/counter" component={ConnectCounter}></Route>
+    </>
+  </Router>
+));
 app.start("#root");
 
 // 自定义延迟函数
