@@ -72,6 +72,7 @@ function getReducers(app) {
   let reducers = {}; //用来合并,会传递给combineReducers
   for (const model of app._models) {
     // 这里的state 是这个 model 对应的分状态
+    //reducers['counter'] = func
     reducers[model.namespace] = function (state = model.state || {}, action) {
       let model_reducers = model["reducers"] || {}; // 拿到一个model 的所有reducer
       let reducer = model_reducers[action.type]; // model_reducers['counter/add'] =>  model_reducers['add']

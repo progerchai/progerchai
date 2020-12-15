@@ -1,12 +1,18 @@
 import React from "react";
-import dva, { connect } from "./dva";
+import dva, { connect } from "dva";
 import { createBrowserHistory } from "history";
-import { Router, Route, Link } from "./dva/router";
+import { Router, Route, Link } from "dva/router";
+import createLoading from "dva-loading";
+import { createLogger } from "redux-logger";
 import key from "keymaster";
 let app = dva({
   history: createBrowserHistory(),
+  onAction: createLogger(), // logger
+  onError: (e) => {
+    console.log(23145, e);
+  },
 });
-
+app.use(createLoading()); // loading插件
 app.model({
   namespace: "counter",
   state: {
@@ -30,15 +36,18 @@ app.model({
   },
   effects: {
     *asyncAdd(state, { put }) {
-      yield delay(1000);
+      try {
+        throw new Error("err");
+      } catch {}
+      yield delay(5000);
       yield put({ type: "add" });
     },
   },
   subscriptions: {
     keyEvent({ history, dispatch }) {
-      window.onresize = function () {
-        dispatch({ type: "add" });
-      };
+      // window.onresize = function () {
+      //   dispatch({ type: "add" });
+      // };
     },
   },
 });
@@ -59,6 +68,7 @@ function Counter(props) {
 }
 
 let ConnectCounter = connect((state) => state.counter)(Counter);
+// 其他写法
 function Home() {
   return <div>home</div>;
 }
