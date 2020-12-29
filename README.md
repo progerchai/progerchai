@@ -2,6 +2,8 @@
 
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=progerchai&hide=c,c%2B%2B&)](https://github.com/progerchai)
 
+![](https://visitor-badge.glitch.me/badge?page_id=progerchai.progerchai)
+
 <!--
 
 Here are some ideas to get you started:
