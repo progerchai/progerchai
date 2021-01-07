@@ -1,55 +1,69 @@
 import 'package:flutter/material.dart';
-import 'package:hello_world/model/post.dart';
+import 'demo/listview_demo.dart';
+import './demo/hello.dart';
 
 void main() => runApp(new MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(title: 'Welcome to Flutter', home: new Home());
+    return new MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Welcome to Flutter',
+      home: new Home(),
+      theme: ThemeData(primarySwatch: Colors.yellow),
+    );
   }
 }
 
 class Home extends StatelessWidget {
-  Widget _listItemBuilder(BuildContext context, int index) {
-    return Container(
-      color: Colors.white,
-      margin: EdgeInsets.all(0),
-      child: Column(children: <Widget>[
-        new Image.network(posts[index].imageUrl),
-        SizedBox(height: 20.0),
-        Text(posts[index].title, style: Theme.of(context).textTheme.title),
-        Text(posts[index].author, style: Theme.of(context).textTheme.subhead),
-        SizedBox(height: 20)
-      ]),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-        backgroundColor: Colors.grey[100],
-        appBar: new AppBar(
-          title: new Text('Welcome to Flutter'),
-        ),
-        body: ListView.builder(
-          itemCount: posts.length,
-          itemBuilder: _listItemBuilder,
+    return DefaultTabController(
+        length: 3,
+        child: new Scaffold(
+          backgroundColor: Colors.grey[100],
+          appBar: new AppBar(
+            leading: IconButton(
+              icon: Icon(Icons.menu),
+              tooltip: 'Navigration',
+              onPressed: () => debugPrint('menu pressed'),
+            ),
+            title: new Text('Progerchai'),
+            actions: <Widget>[
+              IconButton(
+                icon: Icon(Icons.search),
+                tooltip: 'Navigration',
+                onPressed: () => debugPrint('search pressed'),
+              ),
+            ],
+            bottom: TabBar(
+              tabs: <Widget>[
+                Tab(icon: Icon(Icons.local_florist)),
+                Tab(icon: Icon(Icons.change_history)),
+                Tab(icon: Icon(Icons.directions_bike))
+              ],
+            ),
+          ),
+          body: TabBarView(
+            children: <Widget>[
+              Icon(
+                Icons.local_florist,
+                size: 128.0,
+                color: Colors.black12,
+              ),
+              Icon(
+                Icons.change_history,
+                size: 128.0,
+                color: Colors.black12,
+              ),
+              Icon(
+                Icons.directions_bike,
+                size: 128.0,
+                color: Colors.black12,
+              ),
+            ],
+          ),
         ));
-  }
-}
-
-class Hello extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return new Center(
-      child: new Text(
-        'Hello WorldWorldW orldWorldWorldWorldWorldWorldWorldWorldWorldWorldWorldWorldWorldWorld',
-        textAlign: TextAlign.left,
-        maxLines: 1,
-        overflow: TextOverflow.ellipsis,
-        style: TextStyle(fontSize: 20.0, color: Color.fromRGBO(255, 0, 255, 1)),
-      ),
-    );
   }
 }
