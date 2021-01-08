@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import './demo/drawer_demo.dart';
+import './demo/bottom_navigation_bar_demo.dart';
+import './demo/listview_demo.dart';
 
 void main() => runApp(new MyApp());
 
@@ -22,8 +24,8 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-        length: 3,
-        child: new Scaffold(
+      length: 3,
+      child: new Scaffold(
           backgroundColor: Colors.grey[100],
           appBar: new AppBar(
             // leading: IconButton(
@@ -53,11 +55,7 @@ class Home extends StatelessWidget {
           ),
           body: TabBarView(
             children: <Widget>[
-              Icon(
-                Icons.local_florist,
-                size: 128.0,
-                color: Colors.black12,
-              ),
+              ListViewDemo(),
               Icon(
                 Icons.change_history,
                 size: 128.0,
@@ -71,6 +69,7 @@ class Home extends StatelessWidget {
             ],
           ),
           drawer: new DrawerDemo(),
-        ));
+          bottomNavigationBar: new BottomNavigationBarDemo()),
+    );
   }
 }
