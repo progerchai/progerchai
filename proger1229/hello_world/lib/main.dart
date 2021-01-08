@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'demo/listview_demo.dart';
-import './demo/hello.dart';
+import './demo/drawer_demo.dart';
 
 void main() => runApp(new MyApp());
 
@@ -11,7 +10,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Welcome to Flutter',
       home: new Home(),
-      theme: ThemeData(primarySwatch: Colors.yellow),
+      theme: ThemeData(
+          primarySwatch: Colors.yellow,
+          highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
+          splashColor: Colors.white70),
     );
   }
 }
@@ -24,11 +26,11 @@ class Home extends StatelessWidget {
         child: new Scaffold(
           backgroundColor: Colors.grey[100],
           appBar: new AppBar(
-            leading: IconButton(
-              icon: Icon(Icons.menu),
-              tooltip: 'Navigration',
-              onPressed: () => debugPrint('menu pressed'),
-            ),
+            // leading: IconButton(
+            //   icon: Icon(Icons.menu),
+            //   tooltip: 'Navigration',
+            //   onPressed: () => debugPrint('menu pressed'),
+            // ),
             title: new Text('Progerchai'),
             actions: <Widget>[
               IconButton(
@@ -38,6 +40,10 @@ class Home extends StatelessWidget {
               ),
             ],
             bottom: TabBar(
+              unselectedLabelColor: Colors.black38,
+              indicatorColor: Colors.black54,
+              indicatorSize: TabBarIndicatorSize.label,
+              indicatorWeight: 1.0,
               tabs: <Widget>[
                 Tab(icon: Icon(Icons.local_florist)),
                 Tab(icon: Icon(Icons.change_history)),
@@ -64,6 +70,7 @@ class Home extends StatelessWidget {
               ),
             ],
           ),
+          drawer: new DrawerDemo(),
         ));
   }
 }
