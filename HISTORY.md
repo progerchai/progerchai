@@ -2,6 +2,7 @@
 
 日常练习
 
+- static **存放一些静态资源，通过jsdelivr cdn获取**
 - proger0701 `公积金计算器demo`
 - proger0704 `leetcode01 两数之和`
 - proger0705 `leetcode07 整数反转`
