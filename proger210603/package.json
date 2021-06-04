@@ -1,0 +1,15 @@
+{
+  "name": "create_xlsx",
+  "version": "1.0.0",
+  "description": "",
+  "main": "create_xlsx.js",
+  "dependencies": {
+    "node-xlsx": "^0.16.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "progerchai",
+  "license": "ISC"
+}
