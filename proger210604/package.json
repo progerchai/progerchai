@@ -1,0 +1,23 @@
+{
+  "name": "crypto_test",
+  "version": "1.0.0",
+  "description": "crypto test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/progerchai/progerchai.git"
+  },
+  "author": "progerchai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/progerchai/progerchai/issues"
+  },
+  "homepage": "https://github.com/progerchai/progerchai#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "crypto": "^1.0.1"
+  }
+}
