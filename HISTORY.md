@@ -2,7 +2,7 @@
 
 日常练习
 
-- static **存放一些静态资源，通过jsdelivr cdn获取**
+- static **存放一些静态资源，通过 jsdelivr cdn 获取**
 - proger0701 `公积金计算器demo`
 - proger0704 `leetcode01 两数之和`
 - proger0705 `leetcode07 整数反转`
@@ -24,3 +24,8 @@
 - proger210109 `react-native`
 - proger210309 `docsify proj`
 - proger210318 `ansi-styles`
+- proger210524 `electron`
+- proger210630 `learn python in 100 days`
+- proger210603 `node-xlsx`
+- proger210604 `crypto & bcrypt`
+- proger210606 `eva proj`
