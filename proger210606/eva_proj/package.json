@@ -6,6 +6,7 @@
   "dependencies": {
     "@eva/eva.js": "^1.0.7",
     "@eva/plugin-renderer": "^1.0.7",
+    "@eva/plugin-renderer-dragonbone": "^1.0.7",
     "@eva/plugin-renderer-img": "^1.0.7",
     "@eva/plugin-renderer-spine": "^1.0.7",
     "@testing-library/jest-dom": "^5.13.0",
