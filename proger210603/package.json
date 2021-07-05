@@ -4,6 +4,7 @@
   "description": "",
   "main": "create_xlsx.js",
   "dependencies": {
+    "exceljs": "^4.2.1",
     "node-xlsx": "^0.16.1"
   },
   "devDependencies": {},
