@@ -1,0 +1,24 @@
+{
+  "name": "proger220110",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-witch": "babel test.js --watch --out-file test-compiled.js",
+    "build": "babel test.js --out-file test-compiled.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.16.7",
+    "@babel/core": "^7.16.7",
+    "@babel/plugin-transform-arrow-functions": "^7.16.7",
+    "@babel/plugin-transform-destructuring": "^7.16.7",
+    "@babel/plugin-transform-runtime": "^7.16.8",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.16.8",
+    "@babel/runtime": "^7.16.7",
+    "@babel/runtime-corejs2": "^7.16.7"
+  }
+}

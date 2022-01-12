@@ -1,0 +1,1 @@
+npx babel test.js --watch --out-file test-compiled.js
